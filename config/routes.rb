@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  post 'entries/index/id'
-  post 'entries/show/id'
-  resources :feeds
+
+  resources :feeds do
+    member do
+      resources :entries, only: [:index, :show]
+    end
+  end
  #   do
  #  member do
  #   resources :entries, only: [:index, :show]

@@ -6,11 +6,11 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find_by(id: params[:id])
   end
 
   private
   def set_feed
-    @feed = Feed.find(params[:id])
+    @feed = Feed.find_by(id: params[:id])
   end
 end
